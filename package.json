@@ -8,6 +8,7 @@
     "test": "node --test src/**/*.test.js",
     "lint": "node src/lint-check.js",
     "bench": "node src/benchmark.js",
+    "coverage": "node src/coverage-check.js 95",
     "health": "curl -s http://localhost:3456/health | node -e \"process.stdin.on('data',d=>{const j=JSON.parse(d);console.log(j.status==='ok'?'✅ Healthy':'❌ Unhealthy');process.exit(j.status==='ok'?0:1)})\""
   }
 }

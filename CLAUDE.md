@@ -8,6 +8,7 @@ Simple REST API for task management built with Node.js (no dependencies).
 - `npm run lint` — run custom lint checks
 - `npm start` — start the server on port 3456
 - `npm run bench` — run performance benchmark (server must be running)
+- `npm run coverage` — run tests with coverage, fail if < 95%
 
 ## Architecture
 
