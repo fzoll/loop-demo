@@ -17,12 +17,14 @@ export function createTask(title, priority = "medium") {
   if (!validPriorities.includes(priority)) {
     throw new Error(`Priority must be one of: ${validPriorities.join(", ")}`);
   }
+  // BUG: no max length validation on title — accepts megabytes of text
   const task = {
     id: nextId++,
     title: title.trim(),
     priority,
     done: false,
     createdAt: new Date().toISOString(),
+    // BUG: no updatedAt field — after toggle, no way to know when it was last modified
   };
   tasks.set(task.id, task);
   return task;
