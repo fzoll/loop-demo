@@ -1,0 +1,12 @@
+{
+  "name": "loop-demo",
+  "version": "1.0.0",
+  "description": "Demo app for Claude Code loop patterns",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test src/**/*.test.js",
+    "lint": "node src/lint-check.js",
+    "health": "curl -s http://localhost:3456/health | node -e \"process.stdin.on('data',d=>{const j=JSON.parse(d);console.log(j.status==='ok'?'✅ Healthy':'❌ Unhealthy');process.exit(j.status==='ok'?0:1)})\""
+  }
+}
