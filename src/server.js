@@ -1,5 +1,6 @@
 import { createServer } from "node:http";
 import { getAllTasks, getTask, createTask, toggleTask, deleteTask } from "./store.js";
+import config from "./config.js";
 
 function parseBody(req) {
   return new Promise((resolve, reject) => {
@@ -76,7 +77,7 @@ async function handleRequest(req, res) {
   json(res, 404, { error: "Not found" });
 }
 
-const PORT = process.env.PORT || 3456;
+const PORT = process.env.PORT || config.port;
 
 const server = createServer(handleRequest);
 server.listen(PORT, () => {
