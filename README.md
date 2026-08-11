@@ -19,3 +19,5 @@ Server starts on port 3456.
 ## License
 
 MIT
+
+HA node test OK
